@@ -1,0 +1,100 @@
+\documentclass[12pt]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{hyperref}
+
+\newcommand{\HRule}{\rule{\linewidth}{1mm}}
+\parskip 7.0pt
+\renewcommand{\baselinestretch}{1.5}
+
+\input{forside}
+\newpage
+\begin{document}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduksjon}
+
+I denne rapporten vil vi ta for oss krav for en ny IT-løsning for NTNU, hvor de ønsker å digitalisere læringsprosessen. Dette innebærer hele prosessen; alt fra forberedelser professorene gjør hvor de legger ut informasjon om faget og forelesninger, gir karakterer til studenter på eksamener/oppgaver/prosjekter, til studenter som skal klage på karakterer. Denne prosessen blir idag gjort av to separate systemer; EksamensWeb, som bare er tilgjengelig for IME-studenter, og Its’Learning. 
+
+Videre i denne rapporten kommer vi til å analysere situasjonen idag og komme med forslag til forbedring av informasjonssystemet. Vi vil vise dette igjennom BPMN-modeller, kravspesifikasjoner (både funksjonelle -og ikke-funksjonellekrav), hvilke sikkerhetsaspekter som er viktige å ta hensyn til, og drøfting av det forbedrede informasjonssystemet. 
+
+
+\section{Slik systemet er idag}
+Situasjonen i dag er at Studentweb, Eksamensweb og itslearning er tre separate løsninger.  Den eneste interaksjonen som finnes mellom løsningene er at Its Learning henter informasjon om hvilke fag en student er undervisningsmeldt til fra FS. FS er datagrunnlaget til Studentweb. De tre løsningene benytter alle av Feide, noe som gjør at dersom du logger inn på en av løsningene, er de innlogget på de to andre i tillegg. 
+
+\subsection{StudentWeb}
+
+Studentweb er studentenes grensesnitt for å administrere sine studier. Studentweb gjør det mulig for studenter å melde seg opp til fag på NTNU, registrere adresse, sjekke karakterer, bestille karakterutskrift, registrere ved hvilke fakultet de ønsker å stemme og få betalingsinformasjon om semesteravgift. Studentweb er utviklet i samarbeid med NTNU og de andre universitetene og høyskolene som benytter seg av systemet, og henter informasjon fra FS. 
+
+\subsection{ItsLearning}
+
+Itslearning er blant verdens ledende opplæringsplattformer som er utviklet spesielt for utdanningssektoren. Plattformen støtter både lærere og studenter gjennom hele læringsprosessen. \url{http://www.itslearning.no/produkt}. Itslearning er en hyllevare NTNU benytter seg av, og fungerer som en kommunikasjonsarena mellom studenter og ansatte. De innebygde funksjonene i itslearning er mange; studenter kan for eksempel  lage studentgrupper, profesorer kan legge ut informasjon om øvingsopplegg og fag, og studenter har mulighet til å levere og få tilbakemeldinger på arbeid.
+
+\subsection{EksamensWeb}
+Eksamensweb er et webbasert klagesystem utviklet av og for IME-fakultetet på NTNU. Studenter som tar fag som er underlagt instituttene på IME-fakultetet kan registrere klage- og begrunnelsessaker på nettet. Studenter må allikevel signere skriftlig på både klage- og begrunnelsessaker. Selve prosessen med å behandle klage- og begrunnelsessaker forenkles ikke spesielt for faglærerne og sensorene, men ved å bruke eksamensweb har faglærerne en komplett oversikt over hvilke saker som venter på behandling. I arkivet finnes det i tillegg en komplett oversikt over tidligere behandlede saker. Faglærerne får i tillegg purringer fra systemet om saker som ikke har blitt behandlet. Dette fører til at saker ikke uforvarende blir glemt. Slik systemet fungerer i dag har man ikke mulighet til å be om begrunnelse eller klager på emner som ikke tilhører IME.
+\url{https://secure.ime.ntnu.no/utvikling/aktiv/klagesaker/bruksanvisning.html}
+
+
+\section{Forslag til endringer}
+Vi ønsker å digitalisere begrunnelse- og klageprosessen på NTNU. Eksamensweb er en start på en elektronisk klageprosess, men denne er ikke optimal.
+
+\subsection*{EksamensWeb og StudentWeb}
+I vårt nye system vil eksamensweb fungere som en plugin til studentweb. I dette nye systemet vil man ha de samme mulighetene som studentweb har i dag, men i tillegg vil studenten kunne be om begrunnelse og klage direkte i systemet, noe som gjør det mer oversiktlig. Denne løsningen vil optimalt kutte ledd i klageprosessen. Ved å gjøre alt elektronisk blir det mindre jobb for NTNU å motta begrunnelser/klager og for studentene å be om begrunnelse / klage.
+
+Informasjonen som ligger på Studentweb i dag regnes ikke som sensitiv, og innlogging via Feide regnes derfor som sikker nok. Erik Langbakk som er ansvarlig for klager på fakultetet IME, forteller at klage- og begrunnelsesprosessen på NTNU krever signatur. For å unngå å måtte levere et skjema med underskrift manuelt, ønsker vi å benytte oss av en løsning i likhet med den Lånekassen bruker. Her signerer man med noe som heter Buypass. Buypass er registrert hos Post- og teletilsynet som utsteder av kvalifisert ID i henhold til lov om elektronisk signatur \url{http://www.buypass.no/om-buypass}. Vi ønsker fremdeles at muligheten for å signere manuelt forblir, slik at det ikke blir et krav om å skaffe seg buypass.
+
+
+\subsection*{ItsLearning}
+It’slearning er en hyllevare, dette vi si at NTNU ikke kan gjøre noen endringer i dette systemet. For å gjøre endringer må det lages noe nytt, noe som vil føre til store kostnader.
+
+
+\subsection{Nye StudentWeb}
+%[Modell]
+
+\bf{Happy path:}
+
+Student registrerer klage og får ny karakter på studentweb
+
+\bf{Exception path:}
+
+\begin{itemize}
+\item Ingen internett tilgang
+\item Studenten signerer ikke
+\item Studentene har ikke innlogginsrett
+\end{itemize}
+
+\bf{Tekstlig beskrivelse:}
+
+\begin{itemize}
+\item Studenten registrerer klage og signerer via buypass eller skriftlig dokumentasjon
+\item Fakultetet mottar klage, lager ny sak og ber om klagestyre
+\item Professor foreslå klagestyre
+\item Institutt finner dokumenter og sender disse til sensor
+\item Fakultetet registrerer at dokumenter er sendt
+\item Sensor setter karakter
+\item Fakultetet registrerer karakter, og sender beskjed til studenten via sms eller epost
+\begin{enumerate}
+\item Karakteren er uendret - saken er ferdig
+\item Karakteren er ny - oppdateres i FS og blir synlig i studentweb
+\end{enumerate}
+\end{itemize}
+
+
+\section{Drøfting av potensielle problemer man kan møte på i det nye systemet/ hva som kan være vanskelig}
+	 	
+En av de største svakhetene ved vårt forslag er at vi velger å ikke endre på Its Learning. Grunnen til dette er at Its Learning er et pakkeløsning som det er veldig vanskelig og dyrt å gjøre endringer på. Systemet i seg selv har mye bra funksjonalitet, men problemet ligger i at forelesere ikke bruker systemet. Dette har vi tenkt å adressere ved å synliggjøre Its Learning mer og ved å ha kursing i Its Learning for forelesere. Dette håper vi vil gjøre at flere forelesere tar i bruk systemet.
+
+Et annet svakhet er at vi har lyst å bruke BuyPass til signering av klager på studentweb og dette innebærer at studentene må skaffe seg dette. Et stort risiko her er at studenter ikke skaffer seg BuyPass og dermed ikke tar i burk løsningen.
+
+Løsningen vår innebærer at man får samlet både eksamensweb og studentweb på samme sted. Dette er et stort fordel for brukere, men svakheten med denne løsningen er at man får et “single point of failure”, dvs. hvis studentweb går ned, er det heller ikke mulig å klage på eksamensresultater.
+
+\section{Konklusjon}
+
+\end{document}

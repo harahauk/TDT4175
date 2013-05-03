@@ -58,15 +58,15 @@ Skal ha tilgang til systemet for å teste og utvikle det, samt for å vedlikehol
 \section{Slik systemet er idag}
 Situasjonen i dag er at Studentweb, Eksamensweb og itslearning er tre separate løsninger.  Den eneste interaksjonen som finnes mellom løsningene er at Its Learning henter informasjon om hvilke fag en student er undervisningsmeldt til fra FS. FS er datagrunnlaget til Studentweb. De tre løsningene benytter alle av Feide, noe som gjør at dersom du logger inn på en av løsningene, er de innlogget på de to andre i tillegg. 
 
-\subsection{StudentWeb}
+\subsection{Studentweb}
 
 Studentweb er studentenes grensesnitt for å administrere sine studier. Studentweb gjør det mulig for studenter å melde seg opp til fag på NTNU, registrere adresse, sjekke karakterer, bestille karakterutskrift, registrere ved hvilke fakultet de ønsker å stemme og få betalingsinformasjon om semesteravgift. Studentweb er utviklet i samarbeid med NTNU og de andre universitetene og høyskolene som benytter seg av systemet, og henter informasjon fra FS. 
 
-\subsection{ItsLearning}
+\subsection{Itslearning}
 
 Itslearning er blant verdens ledende opplæringsplattformer som er utviklet spesielt for utdanningssektoren. Plattformen støtter både lærere og studenter gjennom hele læringsprosessen. \url{http://www.itslearning.no/produkt}. Itslearning er en hyllevare NTNU benytter seg av, og fungerer som en kommunikasjonsarena mellom studenter og ansatte. De innebygde funksjonene i itslearning er mange; studenter kan for eksempel  lage studentgrupper, profesorer kan legge ut informasjon om øvingsopplegg og fag, og studenter har mulighet til å levere og få tilbakemeldinger på arbeid.
 
-\subsection{EksamensWeb}
+\subsection{Eksamensweb}
 Eksamensweb er et webbasert klagesystem utviklet av og for IME-fakultetet på NTNU. Studenter som tar fag som er underlagt instituttene på IME-fakultetet kan registrere klage- og begrunnelsessaker på nettet. Studenter må allikevel signere skriftlig på både klage- og begrunnelsessaker. Selve prosessen med å behandle klage- og begrunnelsessaker forenkles ikke spesielt for faglærerne og sensorene, men ved å bruke eksamensweb har faglærerne en komplett oversikt over hvilke saker som venter på behandling. I arkivet finnes det i tillegg en komplett oversikt over tidligere behandlede saker. Faglærerne får i tillegg purringer fra systemet om saker som ikke har blitt behandlet. Dette fører til at saker ikke uforvarende blir glemt. Slik systemet fungerer i dag har man ikke mulighet til å be om begrunnelse eller klager på emner som ikke tilhører IME.
 \url{https://secure.ime.ntnu.no/utvikling/aktiv/klagesaker/bruksanvisning.html}
 
@@ -74,7 +74,7 @@ Eksamensweb er et webbasert klagesystem utviklet av og for IME-fakultetet på NT
 \section{Forslag til endringer}
 Vi ønsker å digitalisere begrunnelse- og klageprosessen på NTNU. Eksamensweb er en start på en elektronisk klageprosess, men denne er ikke optimal.
 
-\subsection*{EksamensWeb og StudentWeb}
+\subsection*{Eksamensweb og Studentweb}
 I vårt nye system vil eksamensweb fungere som en plugin til studentweb. I dette nye systemet vil man ha de samme mulighetene som studentweb har i dag, men i tillegg vil studenten kunne be om begrunnelse og klage direkte i systemet, noe som gjør det mer oversiktlig. Denne løsningen vil optimalt kutte ledd i klageprosessen. Ved å gjøre alt elektronisk blir det mindre jobb for NTNU å motta begrunnelser/klager og for studentene å be om begrunnelse / klage.
 
 Informasjonen som ligger på Studentweb i dag regnes ikke som sensitiv, og innlogging via Feide regnes derfor som sikker nok. Erik Langbakk som er ansvarlig for klager på fakultetet IME, forteller at klage- og begrunnelsesprosessen på NTNU krever signatur. For å unngå å måtte levere et skjema med underskrift manuelt, ønsker vi å benytte oss av en løsning i likhet med den Lånekassen bruker. Her signerer man med noe som heter Buypass. Buypass er registrert hos Post- og teletilsynet som utsteder av kvalifisert ID i henhold til lov om elektronisk signatur \url{http://www.buypass.no/om-buypass}. Vi ønsker fremdeles at muligheten for å signere manuelt forblir, slik at det ikke blir et krav om å skaffe seg buypass.

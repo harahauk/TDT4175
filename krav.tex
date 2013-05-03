@@ -73,6 +73,15 @@ implementasjonen av systemet.
 \begin{tabularx}{\textwidth}{|l|X|}
   \hline
   \underline{Navn} & FSK2 \\ \hline
+  \underline{Viktighet} & Medium \\ \hline
+  \underline{Formål} & Driftsanalyse \\ \hline
+  \underline{Krav} & Modulen skal rapportere alle feil til systemeier \\ \hline
+  \underline{Tiltak} & Unntakshåndteringen skal implementere e-postvarsling ved feil til systemeier. \\ \hline
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{|l|X|}
+  \hline
+  \underline{Navn} & FSK3 \\ \hline
   \underline{Viktighet} & Høy \\ \hline
   \underline{Trussel} & Identifisering \\ \hline
   \underline{Krav} & En gyldig norsk signatur er nødvendig for å sende inn klage \\ \hline
@@ -81,7 +90,7 @@ implementasjonen av systemet.
 
 \begin{tabularx}{\textwidth}{|l|X|}
   \hline
-  \underline{Navn} & FSK3 \\ \hline
+  \underline{Navn} & FSK4 \\ \hline
   \underline{Viktighet} & Høy \\ \hline
   \underline{Trussel} & Autentisering \\ \hline
   \underline{Krav} & Løsningen skal ikke tilby digital innsending av klage med mindre buypass signeringen er validert \\ \hline
@@ -90,7 +99,7 @@ implementasjonen av systemet.
 
 \begin{tabularx}{\textwidth}{|l|X|}
   \hline
-  \underline{Navn} & FSK3 \\ \hline
+  \underline{Navn} & FSK5 \\ \hline
   \underline{Viktighet} & Høy \\ \hline
   \underline{Trussel} & Immunitetskrav \\ \hline
   \underline{Krav} & Alle filer som blir lastet ned må skannes for malware. \\ \hline
@@ -126,4 +135,12 @@ implementasjonen av systemet.
   \underline{Tiltak} & Alle unntak og feil skal håndteres, "stacktrace" skjules for bruker og systemeier varsles. \\ \hline
 \end{tabularx}
 
+\begin{tabularx}{\textwidth}{|l|X|}
+  \hline
+  \underline{Navn} & NFSK4 \\ \hline
+  \underline{Viktighet} & Høy \\ \hline
+  \underline{Trussel} & Dataintegritet \\ \hline
+  \underline{Krav} & Implementasjonen skal ikke kunne korrumpere informasjon i datagrunnllaget (FS) \\ \hline
+  \underline{Tiltak} & Klageinnsendingsmodulen vil ha begrenset lesetilgang til relevante posteringer i datagrunnlaget \\ \hline
+\end{tabularx}
 

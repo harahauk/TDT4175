@@ -221,6 +221,22 @@ Student registrerer klage og får ny karakter på studentweb
   \underline{Tiltak} & Implementere punkt-til-punkt kryptering mot systemene det integreres mot \\ \hline
 \end{tabularx}
 
+\subsection{Risikoanalyse}
+
+    \begin{tabularx}{\textwidth}{|l|X|X|X|l|l|}
+    \hline
+    Hendelse & Sansynlighet(1-9) & Innvirkning(1-9) & Viktighet (Sannsynlighet * Innvirkning) & Preventative tiltak & Reaktive tiltak \\ \hline
+    Person med nøkkeloppgave(r) i prosjektet blir borte over lengre tid & 5 & 8 & 40 & Ikke la personer få for stort ansvar & Redistribuering av ansvar \\ \hline
+    Datatap & 3 & 6 & 18 & Backup, versjonskontroll og distribuering & Rulle tilbake til tidligere datagrunnlag \\ \hline
+    Nedetid på servere & 9 & 6 & 54 & Redundans i form av flere servere & Kontakte teknisk personell \\ \hline
+    Ugjevn arbeidsfordeling & 6 & 3 & 18 & Fordele oppgaver dynamisk & Redistribusjon av oppgaver \\ \hline
+    For lite tid satt av til arbeidspakke & 7 & 5 & 35 & Bruke SCRUM og agile metoder & Redistribusjon av oppgaver \\ \hline
+    Manglende støtte for kryptering i integrasjonssytemer & 3 & 7 & 21 & - & Implementere støttemoduler til integrasjonssystemet \\ \hline
+    Gruppemedlemmer som ofte ikke møter på arbeidssesjoner & 9 & 1 & 9 & God kommunikasjon generelt og samkjøring av valg av kommunikasjonskanal & Disiplinering \\ \hline
+    Risiko for at BuyPassløsningen er for krevende i bruk & 4 & 8 & 32 & Ha en backupløsning & Kontakte teknisk personell \\ \hline
+    \end{tabularx}
+
+
 \section{Drøfting av potensielle problemer man kan møte på i det nye systemet/ hva som kan være vanskelig}
 	 	
 En av de største svakhetene ved vårt forslag er at vi velger å ikke endre på Its Learning. Grunnen til dette er at Its Learning er et pakkeløsning som det er veldig vanskelig og dyrt å gjøre endringer på. Systemet i seg selv har mye bra funksjonalitet, men problemet ligger i at forelesere ikke bruker systemet. Dette har vi tenkt å adressere ved å synliggjøre Its Learning mer og ved å ha kursing i Its Learning for forelesere. Dette håper vi vil gjøre at flere forelesere tar i bruk systemet.

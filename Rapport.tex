@@ -51,6 +51,9 @@ Saksbehandlere er ansatte ved NTNU som må ha tilgang til systemet på regulær 
 
 Skal ha tilgang til systemet for å teste og utvikle det, samt for å vedlikeholde det.
  
+\includegraphics[width=0.9 \textwidth]{before.png}
+
+\includegraphics[width=0.9 \textwidth]{eksamensweb_ny.png}
 
 \section{Slik systemet er idag}
 Situasjonen i dag er at Studentweb, Eksamensweb og itslearning er tre separate løsninger.  Den eneste interaksjonen som finnes mellom løsningene er at Its Learning henter informasjon om hvilke fag en student er undervisningsmeldt til fra FS. FS er datagrunnlaget til Studentweb. De tre løsningene benytter alle av Feide, noe som gjør at dersom du logger inn på en av løsningene, er de innlogget på de to andre i tillegg. 
@@ -83,6 +86,8 @@ It’slearning er en hyllevare, dette vi si at NTNU ikke kan gjøre noen endring
 
 \subsection{Nye StudentWeb}
 %[Modell]
+
+\includegraphics[width=0.9 \textwidth]{nyestudentweb}
 
 \subsubsection*{Happy path:}
 
@@ -223,7 +228,7 @@ Student registrerer klage og får ny karakter på studentweb
 
 \subsection{Risikoanalyse}
 
-    \begin{tabularx}{\textwidth}{|l|X|X|X|l|l|}
+    \begin{tabular}{|p{0.3 \textwidth}|p{0.1 \textwidth}|p{0.1 \textwidth}|p{0.1 \textwidth}|p{0.1 \textwidth}|p{0.3 \textwidth}|}
     \hline
     Hendelse & Sansynlighet(1-9) & Innvirkning(1-9) & Viktighet (Sannsynlighet * Innvirkning) & Preventative tiltak & Reaktive tiltak \\ \hline
     Person med nøkkeloppgave(r) i prosjektet blir borte over lengre tid & 5 & 8 & 40 & Ikke la personer få for stort ansvar & Redistribuering av ansvar \\ \hline
@@ -234,7 +239,7 @@ Student registrerer klage og får ny karakter på studentweb
     Manglende støtte for kryptering i integrasjonssytemer & 3 & 7 & 21 & - & Implementere støttemoduler til integrasjonssystemet \\ \hline
     Gruppemedlemmer som ofte ikke møter på arbeidssesjoner & 9 & 1 & 9 & God kommunikasjon generelt og samkjøring av valg av kommunikasjonskanal & Disiplinering \\ \hline
     Risiko for at BuyPassløsningen er for krevende i bruk & 4 & 8 & 32 & Ha en backupløsning & Kontakte teknisk personell \\ \hline
-    \end{tabularx}
+    \end{tabular}
 
 
 \section{Drøfting av potensielle problemer man kan møte på i det nye systemet/ hva som kan være vanskelig}

@@ -58,12 +58,12 @@
 
 \subsection{Funksjonelle krav}
 
-Under er det listet noen funksjonelle krav for forslag til det nye systemet. Disse kravene er hovedsakelig basert på sikkerhet da dette er veldig viktig i forhold til den nye
+Under er det listet noen funksjonelle krav for forslag til det nye systemet. Disse kravene omhandler mye sikkerhet da dette er veldig viktig i forhold til den nye
 implementasjonen av systemet. 
 
 \begin{tabularx}{\textwidth}{|l|X|}
   \hline
-  \underline{Navn} & FSK1 \\ \hline
+  \underline{Navn} & FK1 \\ \hline
   \underline{Viktighet} & Høy \\ \hline
   \underline{Formål} & Innsending av klage fra StudentWeb \\ \hline
   \underline{Krav} & StudentWeb skal tilby digital innsending av klage på karakter \\ \hline
@@ -72,16 +72,16 @@ implementasjonen av systemet.
 
 \begin{tabularx}{\textwidth}{|l|X|}
   \hline
-  \underline{Navn} & FSK2 \\ \hline
+  \underline{Navn} & FK2 \\ \hline
   \underline{Viktighet} & Medium \\ \hline
   \underline{Formål} & Driftsanalyse \\ \hline
-  \underline{Krav} & Modulen skal rapportere alle feil til systemeier \\ \hline
+  \underline{Krav} & Modulen skal rapportere alle feil til systemeier. \\ \hline
   \underline{Tiltak} & Unntakshåndteringen skal implementere e-postvarsling ved feil til systemeier. \\ \hline
 \end{tabularx}
 
 \begin{tabularx}{\textwidth}{|l|X|}
   \hline
-  \underline{Navn} & FSK3 \\ \hline
+  \underline{Navn} & FK3 \\ \hline
   \underline{Viktighet} & Høy \\ \hline
   \underline{Trussel} & Identifisering \\ \hline
   \underline{Krav} & En gyldig norsk signatur er nødvendig for å sende inn klage \\ \hline
@@ -90,7 +90,7 @@ implementasjonen av systemet.
 
 \begin{tabularx}{\textwidth}{|l|X|}
   \hline
-  \underline{Navn} & FSK4 \\ \hline
+  \underline{Navn} & FK4 \\ \hline
   \underline{Viktighet} & Høy \\ \hline
   \underline{Trussel} & Autentisering \\ \hline
   \underline{Krav} & Løsningen skal ikke tilby digital innsending av klage med mindre buypass signeringen er validert \\ \hline
@@ -99,7 +99,7 @@ implementasjonen av systemet.
 
 \begin{tabularx}{\textwidth}{|l|X|}
   \hline
-  \underline{Navn} & FSK5 \\ \hline
+  \underline{Navn} & FK5 \\ \hline
   \underline{Viktighet} & Høy \\ \hline
   \underline{Trussel} & Immunitetskrav \\ \hline
   \underline{Krav} & Alle filer som blir lastet ned må skannes for malware. \\ \hline
@@ -110,16 +110,16 @@ implementasjonen av systemet.
 
 \begin{tabularx}{\textwidth}{|l|X|}
   \hline
-  \underline{Navn} & NFSK1 \\ \hline
+  \underline{Navn} & IFK1 \\ \hline
   \underline{Viktighet} & Høy \\ \hline
   \underline{Trussel} & Generell \\ \hline
-  \underline{Krav} & Løsningen skal ikke undermine eksisterende sikkerhetsmekanismer i StudWeb eller FS \\ \hline
+  \underline{Krav} & Løsningen skal ikke undermine eksisterende sikkerhetsmekanismer i StudentWeb eller FS \\ \hline
   \underline{Tiltak} & Det skal ikke implementeres mekanismer som åpner for større tilgangsnivå av informasjon enn før implementasjon \\ \hline
 \end{tabularx}
 
 \begin{tabularx}{\textwidth}{|l|X|}
   \hline
-  \underline{Navn} & NFSK2 \\ \hline
+  \underline{Navn} & IFK2 \\ \hline
   \underline{Viktighet} & Høy \\ \hline
   \underline{Trussel} & Data Transport \\ \hline
   \underline{Krav} & Implementasjon må kreve sikker kommunikasjon med eksterne tilbydere \\ \hline
@@ -128,7 +128,7 @@ implementasjonen av systemet.
 
 \begin{tabularx}{\textwidth}{|l|X|}
   \hline
-  \underline{Navn} & NFSK3 \\ \hline
+  \underline{Navn} & IFK3 \\ \hline
   \underline{Viktighet} & Medium \\ \hline
   \underline{Trussel} & Eksponering av indre mekanikker. \\ \hline
   \underline{Krav} & Hvis feil oppstår skal ikke feilbedskjeder avsløre systemet indre mekanikker for analyse. \\ \hline
@@ -137,10 +137,20 @@ implementasjonen av systemet.
 
 \begin{tabularx}{\textwidth}{|l|X|}
   \hline
-  \underline{Navn} & NFSK4 \\ \hline
+  \underline{Navn} & IFK4 \\ \hline
   \underline{Viktighet} & Høy \\ \hline
   \underline{Trussel} & Dataintegritet \\ \hline
-  \underline{Krav} & Implementasjonen skal ikke kunne korrumpere informasjon i datagrunnllaget (FS) \\ \hline
-  \underline{Tiltak} & Klageinnsendingsmodulen vil ha begrenset lesetilgang til relevante posteringer i datagrunnlaget \\ \hline
+  \underline{Krav} & Implementasjonen skal ikke kunne korrumpere informasjon i datagrunnlaget (FS) \\ \hline
+  \underline{Tiltak} & Klageinnsendingsmodulen vil ha begrenset lesetilgang til relevante posteringer i datagrunnlaget og skrivetilgang bare hvor relevant. \\ \hline
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{|l|X|}
+  \hline
+  \underline{Navn} & IFK5 \\ \hline
+  \underline{Viktighet} & Høy \\ \hline
+  \underline{Trussel} & Innbrudd \\ \hline
+  \underline{Krav} & Implementasjonen skal kunne detektere at den er under angrep. \\ \hline
+  \underline{Tiltak} & Det skal implementeres monitorering der modulen vil kunne resonnere at den er under systematisk angrep eller at en funksjon er eksponert uten at
+  forhåndskrav som autentifisering er gjennomført av bruker. \\ \hline
 \end{tabularx}
 

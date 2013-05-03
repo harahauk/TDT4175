@@ -118,7 +118,7 @@ Student registrerer klage og får ny karakter på studentweb
 \end{itemize}
 
 
-\section{Funksjonelle krav}
+\section{Krav}
 
 \section{Ikke-funksjonelle krav}
 
@@ -228,9 +228,18 @@ Student registrerer klage og får ny karakter på studentweb
 
 \subsection{Risikoanalyse}
 
-    \begin{tabular}{|p{0.3 \textwidth}|p{0.1 \textwidth}|p{0.1 \textwidth}|p{0.1 \textwidth}|p{0.1 \textwidth}|p{0.3 \textwidth}|}
+\begin{tabular}{c l l}
+  1. & Hendelse (H)\\ \hline
+  2. & Sansynlighet (1-9) (S) \\
+  3. & Innvirkning (1-9) (I) \\
+  4. & Viktighet (V = S*I) \\
+  5. & Preventative tiltak (P) \\
+  6. & Reaktive tiltak (R) \\
+\end{tabular}
+
+    \begin{tabular}{|p{0.2 \textwidth}|p{0.1 \textwidth}|p{0.1 \textwidth}|p{0.1 \textwidth}|p{0.2 \textwidth}|p{0.2 \textwidth}|}
     \hline
-    Hendelse & Sansynlighet(1-9) & Innvirkning(1-9) & Viktighet (Sannsynlighet * Innvirkning) & Preventative tiltak & Reaktive tiltak \\ \hline
+    H & S (1-9) & I (1-9) & V & P & R \\ \hline
     Person med nøkkeloppgave(r) i prosjektet blir borte over lengre tid & 5 & 8 & 40 & Ikke la personer få for stort ansvar & Redistribuering av ansvar \\ \hline
     Datatap & 3 & 6 & 18 & Backup, versjonskontroll og distribuering & Rulle tilbake til tidligere datagrunnlag \\ \hline
     Nedetid på servere & 9 & 6 & 54 & Redundans i form av flere servere & Kontakte teknisk personell \\ \hline

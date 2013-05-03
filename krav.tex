@@ -1,0 +1,113 @@
+\section{Krav}
+
+\subsection{Oppgavetabeller}
+
+\subsubsection*{Oppgave 1: Innlogging på studentWeb}
+
+\underline{Formål:} Oppnå personling og sikker tilgang til studentWeb\\
+\underline{Hyppighet:} 100/time\\
+\underline{Kritisk:} August og Januar
+
+\begin{tabularx}{\textwidth}{|l|X|}
+  \hline
+  Underoppgave & Løsning \\ \hline
+  Tilby en alternativ innlogging & Implementere Buypass som alternativ innlogging til studentWeb \\ \hline
+\end{tabularx}
+
+\subsubsection*{Oppgave 2: Registrere klage}
+
+\underline{Formål:} Registrere klage i systemet\\
+\underline{Hyppighet:} 4/time i kritisk periode\\
+\underline{Kritisk:} August og Januar
+
+\begin{tabularx}{\textwidth}{|l|X|}
+  \hline
+  Underoppgave & Løsning \\ \hline
+  Verifiser student/fagkombinasjon & Sjekk om student er registret i faget \\ \hline
+  Sikker innlogging & Innlogging med BuyPass \\ \hline
+\end{tabularx}
+
+
+\subsubsection*{Oppgave 3: Ny sak}
+
+\underline{Formål:} Opprette ny klagesak\\
+\underline{Hyppighet:} 4/time i kritisk periode\\
+\underline{Kritisk:} August og Januar
+
+\begin{tabularx}{\textwidth}{|l|X|}
+  \hline
+  Underoppgave & Løsning \\ \hline
+  Lagre saken & Arkiver sak hos Ephorte \\ \hline
+  Opprette klage & Gi beskjed til professor om å opprette et klagestyre \\ \hline
+  Tilgang til dokumenter & Be instituttet sende relevante papirer til sensor \\ \hline
+\end{tabularx}
+
+\subsubsection*{Oppgave 4: Ny karakter}
+
+\underline{Formål:} Oppdatere karakter etter klage\\
+\underline{Hyppighet:} Sjeldent\\
+\underline{Kritisk:} Menneskelig svikt (skrivefeil og lignende)
+
+\begin{tabularx}{\textwidth}{|l|X|}
+  \hline
+  Underoppgave & Løsning \\ \hline
+  Beskjed til student & Send epost til student \\ \hline
+  Endre karakter & Send ny karakter til FS og videre til studweb. \\ \hline
+  Avslutte sak & Send beskjed til Ephorte for å avslutte saken \\ \hline
+\end{tabularx}
+
+
+\subsection{Funksjonelle krav - Sikkerhet}
+
+Under er det listet noen funksjonelle krav for forslag til det nye systemet. Disse kravene er hovedsakelig basert på sikkerhet da dette er veldig viktig i forhold til "det nye systemet". 
+
+\begin{tabularx}{\textwidth}{|l|X|}
+  \hline
+  \underline{Navn} & FSK1 \\ \hline
+  \underline{Viktighet} & Høy \\ \hline
+  \underline{Trussel} & Identifisering \\ \hline
+  \underline{Krav} & En gyldig norsk signatur er nødvendig for å sende inn klage \\ \hline
+  \underline{Tiltak} & Implementere BuyPass som signaturform \\ \hline
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{|l|X|}
+  \hline
+  \underline{Navn} & FSK2 \\ \hline
+  \underline{Viktighet} & Høy \\ \hline
+  \underline{Trussel} & Autentisering \\ \hline
+  \underline{Krav} & Løsningen skal ikke tilby digital innsending av klage med mindre buypass signeringen er validert \\ \hline
+  \underline{Tiltak} & Validere authentifisering fra studentWeb \\ \hline
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{|l|X|}
+  \hline
+  \underline{Navn} & FSK3 \\ \hline
+  \underline{Viktighet} & Høy \\ \hline
+  \underline{Trussel} & Immunitetskrav \\ \hline
+  \underline{Krav} & Alle filer som blir lastet ned må skannes for malware \\ \hline
+  \underline{Tiltak} & Ha oppdatert anti-malware programvare til en hver tid \\ \hline
+\end{tabularx}
+
+
+\subsection{Ikke-funksjonelle krav}
+
+\begin{tabularx}{\textwidth}{|l|X|}
+  \hline
+  \underline{Navn} & NFSK1 \\ \hline
+  \underline{Viktighet} & Høy \\ \hline
+  \underline{Trussel} & Generell \\ \hline
+  \underline{Krav} & Løsningen skal ikke undermine eksisterende sikkerhetsmekanismer i StudWeb eller FS \\ \hline
+  \underline{Tiltak} & Det skal ikke implementeres mekanismer som åpner for større tilgangsnivå av informasjon enn før implementasjon \\ \hline
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{|l|X|}
+  \hline
+  \underline{Navn} & NFSK2 \\ \hline
+  \underline{Viktighet} & Høy \\ \hline
+  \underline{Trussel} & Data Transport \\ \hline
+  \underline{Krav} & Implementasjon må kreve sikker kommunikasjon med eksterne tilbydere \\ \hline
+  \underline{Tiltak} & Implementere punkt-til-punkt kryptering mot systemene det integreres mot \\ \hline
+\end{tabularx}
+
+
+

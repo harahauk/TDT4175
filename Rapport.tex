@@ -1,5 +1,4 @@
 \documentclass[12pt]{article}
-
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{amsmath}
@@ -38,8 +37,20 @@
 
 I denne rapporten vil vi ta for oss krav for en ny IT-løsning for NTNU, hvor de ønsker å digitalisere læringsprosessen. Dette innebærer hele prosessen; alt fra forberedelser professorene gjør hvor de legger ut informasjon om faget og forelesninger, gir karakterer til studenter på eksamener/oppgaver/prosjekter, til studenter som skal klage på karakterer. Denne prosessen blir idag gjort av to separate systemer; EksamensWeb, som bare er tilgjengelig for IME-studenter, og Its’Learning. 
 
-Videre i denne rapporten kommer vi til å analysere situasjonen idag og komme med forslag til forbedring av informasjonssystemet. Vi vil vise dette igjennom BPMN-modeller, kravspesifikasjoner (både funksjonelle -og ikke-funksjonellekrav), hvilke sikkerhetsaspekter som er viktige å ta hensyn til, og drøfting av det forbedrede informasjonssystemet. 
+Videre i denne rapporten kommer vi til å analysere situasjonen idag og komme med forslag til forbedring av informasjonssystemet. Vi vil vise dette igjennom BPMN-modeller, kravspesifikasjoner (både funksjonelle -og ikke-funksjonellekrav), hvilke sikkerhetsaspekter som er viktige å ta hensyn til, og drøfting av det forbedrede informasjonssystemet.
 
+\subsection{Roller i systemet}
+
+\subsubsection*{Studenter}
+Studenter er primære brukere av systemet, de skal ha tilgang til alt funksjonalitet i systemet bort sett fra saksbehandler delen av systemet. Studenter skal kun ha tilgang til data knyttet sin egen bruker.
+
+\subsubsection*{Saksbehandlere}
+Saksbehandlere er ansatte ved NTNU som må ha tilgang til systemet på regulær basis. (usikker om de skal ha lese og skrive tilgang eller bare lese tilgang- orakel har kun lese tilgang.)
+
+\subsubsection*{Utviklere og Testere}
+
+Skal ha tilgang til systemet for å teste og utvikle det, samt for å vedlikeholde det.
+ 
 
 \section{Slik systemet er idag}
 Situasjonen i dag er at Studentweb, Eksamensweb og itslearning er tre separate løsninger.  Den eneste interaksjonen som finnes mellom løsningene er at Its Learning henter informasjon om hvilke fag en student er undervisningsmeldt til fra FS. FS er datagrunnlaget til Studentweb. De tre løsningene benytter alle av Feide, noe som gjør at dersom du logger inn på en av løsningene, er de innlogget på de to andre i tillegg. 
